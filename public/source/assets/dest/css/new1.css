@@ -1,0 +1,51 @@
+.Header {
+    height:50px;
+    border-left: 10px;
+}
+.Header1 {
+    background-color:palegoldenrod;
+    height: 60px;
+    color:red;
+}
+
+.Body1--Style {
+    height: 300px;
+    background-position: auto;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.6));
+}
+
+.Body2 {
+    height: 900px;
+}
+
+.Footer {
+    height: 150px;
+    background-color: lightblue;
+}
+.Footer1 {
+    height: 6s0px;
+    background-color:black;
+}
+
+.Meunu {
+    height: 80px;
+    color:darkorange;
+    background-color: skyblue;
+}
+
+.header2 {
+    height: 500px;
+    background-size: 100% 100%;
+    background-position: auto;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.295), rgba(0, 0, 0, 0.6));
+}
+
+.aa {
+    border-bottom: 0.5px solid;
+    color: red;
+}
+.image {
+    height:350px;
+}
