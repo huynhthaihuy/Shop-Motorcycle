@@ -14,7 +14,6 @@
     background-repeat: no-repeat;
     background-image: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.6));
 }
-
 .Body2 {
     height: 900px;
 }
@@ -48,4 +47,7 @@
 }
 .image {
     height:350px;
+}
+.ribbon{
+    background-color: green;
 }

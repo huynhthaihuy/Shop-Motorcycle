@@ -29,7 +29,7 @@
 						<div class="beta-products-list">
 							<h4>New Products</h4>
 							<div class="beta-products-details">
-								<p class="pull-left">438 styles found</p>
+								<p class="pull-left">Tìm thấy {{count($sp_theoloai)}}</p>
 								<div class="clearfix"></div>
 							</div>
 
@@ -47,10 +47,10 @@
 											<p class="single-item-title">{{$sp->name}}</p>
 											<p class="single-item-price">
 											@if($sp->promotion_price != 0)
-											<span class="flash-del">{{$sp->unit_price}}</span>
-                                                <span class="flash-sale">{{$sp->promotion_price}}</span>
+											<span class="flash-del">{{number_format($sp->unit_price)}}</span>
+                                                <span class="flash-sale">{{number_format($sp->promotion_price)}}</span>
 												@else
-												<span class="flash-sale">{{$sp->unit_price}}</span>
+												<span class="flash-sale">{{number_format($sp->unit_price)}}</span>
 											@endif
 											</p>
 										</div>
@@ -87,10 +87,10 @@
 											<p class="single-item-title">{{$sp_k->name}}</p>
 											<p class="single-item-price">
 											@if($sp_k->promotion_price != 0)
-											<span class="flash-del">{{$sp_k->unit_price}}</span>
-                                                <span class="flash-sale">{{$sp_k->promotion_price}}</span>
+											<span class="flash-del">{{number_format($sp_k->unit_price)}}</span>
+                                                <span class="flash-sale">{{number_format($sp_k->promotion_price)}}</span>
 												@else
-												<span class="flash-sale">{{$sp_k->unit_price}}</span>
+												<span class="flash-sale">{{number_format($sp_k->unit_price)}}</span>
 											@endif
 											</p>
 										</div>
@@ -114,4 +114,4 @@
 			</div> <!-- .main-content -->
 		</div> <!-- #content -->
     </div> <!-- .container -->
-	@endsection
+@endsection

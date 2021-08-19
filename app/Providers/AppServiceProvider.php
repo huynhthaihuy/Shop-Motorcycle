@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
         });
         view()->composer(['header','page.dat_hang'],function($view){
             if(Session('cart')){
-                $oldcart = Session::get('cart');
-                $cart = new Cart($oldcart);//kiểm tra giỏ hàng có giỏ hàng mới chưa
+                $oldcart = Session::get('cart');//kiểm tra giỏ hàng có giỏ hàng mới chưa
+                $cart = new Cart($oldcart);
                 $view->with(['cart' => Session::get('cart'),'product_cart'=>$cart->items,'totalrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
             }
         });

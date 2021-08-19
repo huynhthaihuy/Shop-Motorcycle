@@ -19,7 +19,7 @@
 				</div>
 				<div class="clearfix"></div>
                 </div>
-<div class="Header1 container-fluid d-flex d-none d-xl-block align-items-center">
+<div class="Header1 container-fluid d-flex d-none d-xl-block align-items-center bg-light">
         <div class="row">
             <div class="col-2">
                 <img src="source/assets/dest/images/tải xuống.jpg" height="50px" class="w-50" >
@@ -47,6 +47,7 @@
 						</form>
 			</div>
 			<div class="col-2 d-flex justify-content-center mt-3">
+			@if(Auth::check())
 					@if(Session::has('cart'))
 						<div class="cart">
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (@if(Session::has('cart')){{Session('cart')->totalQty}} @else Trống @endif) <i class="fa fa-chevron-down"></i></div>
@@ -75,6 +76,7 @@
 								</div>
 							</div>
 						</div> <!-- .cart -->
+						@endif
 						@endif
         </div>
     </div>

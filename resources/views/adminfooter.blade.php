@@ -24,7 +24,7 @@
 						<div>
 							<div class="contact-info">
 							<i class="fas fa-map-marker-alt"></i>
-								<p class="mt-2">K448/67 Trưng Nữ Vương - Hải Châu - Đà Nẵng</p>
+								<p>K448/67 Trưng Nữ Vương - Hải Châu - Đà Nẵng</p>
 							</div>
 						</div>
 					</div>

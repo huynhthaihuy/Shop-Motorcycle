@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="container mt-3">
-            <h4>Sản Phẩm</h4>
+            <h4>Sản Phẩm Mới</h4>
 							<div class="beta-products-details">
 								<p class="pull-left">Tìm thấy {{count($new_product)}} sản phẩm</p>
 								<div class="clearfix"></div>
@@ -71,10 +71,10 @@
 											<p class="single-item-title">{{$new->name}}</p>
 											<p class="single-item-price">
                                             @if($new->promotion_price==0)
-                                            <span class="flash-sale">{{$new->unit_price}}</span>
+                                            <span class="flash-sale">{{number_format($new->unit_price)}}</span>
                                             @else
-                                            <span class="flash-del">{{$new->unit_price}}</span>
-                                            <span class="flash-sale">{{$new->promotion_price}}</span>
+                                            <span class="flash-del">{{number_format($new->unit_price)}}</span>
+                                            <span class="flash-sale">{{number_format($new->promotion_price)}}</span>
                                             @endif
 											</p>
 										</div>
@@ -83,7 +83,7 @@
 											<a class="add-to-cart pull-left" href="{{route('users.add',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('users.detail',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         @else
-                                        <a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="add-to-cart pull-left" href=""><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('users.detail',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         @endif
 											<div class="clearfix"></div>
@@ -105,14 +105,17 @@
                                 @foreach($new_product1 as $new1)
 								<div class="col-sm-3">
 									<div class="single-item">
+                                    @if($new1->promotion_price!=0)
+                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                    @endif
 										<div class="single-item-header">
 											<a href="{{route('users.detail',$new1->id)}}"><img src="source/image/product/{{$new1->image}}" alt="" height="250px"></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new1->name}}</p>
 											<p class="single-item-price">
-                                            <span class="flash-del">{{$new1->unit_price}}</span>
-                                                <span class="flash-sale">{{$new1->promotion_price}}</span>
+                                            <span class="flash-del">{{number_format($new1->unit_price)}}</span>
+                                                <span class="flash-sale">{{number_format($new1->promotion_price)}}</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -120,7 +123,7 @@
 											<a class="add-to-cart pull-left" href="{{route('users.add',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('users.detail',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         @else
-                                        <a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="add-to-cart pull-left" href=""><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('users.detail',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         @endif
 											<div class="clearfix"></div>

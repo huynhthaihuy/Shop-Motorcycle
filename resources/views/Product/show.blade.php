@@ -1,10 +1,25 @@
-@extends('master')
+@extends('adminmaster')
 @section('content')
-<div class="Header container text-center">
-    <h1> LARAVEL CRUD USERS DEMO </h1>
+<div class="Header1 container-fluid d-flex d-none d-xl-block align-items-center bg-light">
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-10">
+            <nav class="main-menu">
+                <ul class="nav mb-1">
+                <li><a href="{{route('admins.index')}}">Quản Lý Người Dùng</a></li>
+					<li><a href="{{route('products.index')}}">Quản Lý Sản Phẩm</a></li>
+					<li><a href="{{route('bills.index')}}">Quản Lý Hóa Đơn</a></li>
+                </ul>
+            </nav>
+</div>
+</div>
+</div>
+<div class="Header container text-center mt-3">
+    <h1> Chi Tiết Sản Phẩm</h1>
 </div>
 <div id="content">
-<table class="table table-bordered table-hover"><tr><th class='text-center'>ID</th><th class='text-center'>Name</th><th class="text-center">Description</th><th class="text-center">Unit_Price</th><th class="text-center">Promotion_Price</th><th class="text-center">Image</th><th class="text-center">Category</th><th class='text-center'>Action</th></tr>
+<table class="table table-bordered table-hover"><tr><th class='text-center'>ID</th><th class='text-center'>Tên</th><th class="text-center">Mô Tả</th><th class="text-center">Giá Gốc</th><th class="text-center">Giá Giảm</th><th class="text-center">Ảnh</th><th class="text-center">Loại</th><th class='text-center'>Xử Lý</th></tr>
     <tr scope="row"><td>{{$product->id}}</td>
     <td>{{$product->name}}</td>
     <td>{{$product->description}}</td>

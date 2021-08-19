@@ -27,10 +27,10 @@
 								<p class="single-item-title">{{$sanpham->name}}</p>
 								<p class="single-item-price">
 								@if($sanpham->promotion_price != 0)
-											<span class="flash-del">{{$sanpham->unit_price}}</span>
-                                                <span class="flash-sale">{{$sanpham->promotion_price}}</span>
+											<span class="flash-del">{{number_format($sanpham->unit_price)}}</span>
+                                                <span class="flash-sale">{{number_format($sanpham->promotion_price)}}</span>
 												@else
-												<span class="flash-sale">{{$sanpham->unit_price}}</span>
+												<span class="flash-sale">{{number_format($sanpham->unit_price)}}</span>
 								@endif
 								</p>
 							</div>
@@ -38,9 +38,6 @@
 							<div class="clearfix"></div>
 							<div class="space20">&nbsp;</div>
 
-							<div class="single-item-desc">
-								<p>{{$sanpham->description}}</p>
-							</div>
 							<div class="space20">&nbsp;</div>
 
 							<p>Số Lượng:</p>
@@ -62,15 +59,16 @@
 					<div class="space40">&nbsp;</div>
 					<div class="woocommerce-tabs">
 						<ul class="tabs">
-							<li><a href="#tab-description">Description</a></li>
+							<li><a href="#tab-description">Mô Tả</a></li>
 						</ul>
 
 						<div class="panel" id="tab-description">
-							<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-							<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequaturuis autem vel eum iure reprehenderit qui in ea voluptate velit es quam nihil molestiae consequr, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? </p>
+								<p>{{$sanpham->description}}</p>
 						</div>
 						<div class="panel" id="tab-reviews">
-							<p>No Reviews</p>
+						<div id="fb-root"></div>
+				<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="CS5U2sZT"></script>
+				<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="800" data-numposts="5"></div>
 						</div>
 					</div>
 					<div class="space50">&nbsp;</div>

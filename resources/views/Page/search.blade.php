@@ -27,10 +27,10 @@
 											<p class="single-item-title">{{$new->name}}</p>
 											<p class="single-item-price">
                                             @if($new->promotion_price==0)
-                                            <span class="flash-sale">{{$new->unit_price}}</span>
+                                            <span class="flash-sale">{{number_format($new->unit_price)}}</span>
                                             @else
-                                            <span class="flash-del">{{$new->unit_price}}</span>
-                                            <span class="flash-sale">{{$new->promotion_price}}</span>
+                                            <span class="flash-del">{{number_format($new->unit_price)}}</span>
+                                            <span class="flash-sale">{{number_format($new->promotion_price)}}</span>
                                             @endif
 											</p>
 										</div>

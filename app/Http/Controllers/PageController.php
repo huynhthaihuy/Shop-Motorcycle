@@ -154,7 +154,7 @@ class PageController extends Controller
             }
             if(Auth::attempt(['email' => $email , 'password' => $password,'admin' => "0"])){
 
-                return redirect()->route('users.index');
+                return redirect()->route('admins.index');
                 }
             else{
                 return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập không thành công']);
@@ -165,7 +165,7 @@ class PageController extends Controller
             return redirect()->route('users.index');
         }
     public function Search(Request $request){
-        $product = Product::Where('name','like','%'.$request->search.'%')->get();
+        $product = Product::Where('name','like','%'.$request->search.'%')->orWhere('unit_price',$request->search)->get();
         return view('page.search',compact('product'));
     }
 }

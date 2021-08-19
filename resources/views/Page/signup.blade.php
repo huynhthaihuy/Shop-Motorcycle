@@ -47,7 +47,7 @@
 
 						<div class="form-block">
 							<label for="adress">Address*</label>
-							<input type="text" name="address" value="Street Address" required>
+							<input type="text" name="address" placeholder="Street Address" required>
 						</div>
 
 

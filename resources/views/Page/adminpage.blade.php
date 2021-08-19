@@ -1,21 +1,6 @@
 @extends('master')
 @section('content')
 @if(Auth::check())
-<div class="Header1 container-fluid d-flex d-none d-xl-block align-items-center">
-<div class="row">
-    <div class="col-2">
-    </div>
-    <div class="col-10">
-            <nav class="main-menu">
-                <ul class="nav mt-2">
-                <li><a href="{{route('admins.index')}}">Quản Lý Users</a></li>
-					<li><a href="{{route('products.index')}}">Quản Lý Products</a></li>
-					<li><a href="{{route('bills.index')}}">Quản Lý Bill</a></li>
-                </ul>
-            </nav>
-</div>
-</div>
-</div>
 @else
 @endif
 <div class="Body1--Style container-fluid d-flex px-0 py-0 ">

@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Session;
 use App\User;
 use Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -40,20 +42,28 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // User::create([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password'=> $request->password
-        // ]);
-        // dd($request->ct_id);
-        // dd($request->all());
-        $user = new User;
-        $user->full_name = $request->name;
+        $this->validate($request,
+            [
+                'email'=>'required|email|unique:users,email',
+                'password'=>'required|min:6|max:20',
+                'fullname'=>'required',
+                're_password'=>'required|same:password'
+            ],
+            [
+                'email.required'=>'Vui lòng nhập email',
+                'email.email'=>'Không đúng định dạng email',
+                'email.unique'=>'Email đã có người sử dụng',
+                'password.required'=>'Vui lòng nhập mật khẩu',
+                're_password.same'=>'Mật khẩu không giống nhau',
+                'password.min'=>'Mật khẩu ít nhất 6 kí tự'
+            ]);
+        $user = new User();
+        $user->full_name = $request->fullname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
         $user->address = $request->address;
+        $user->admin = $request->admin;
         $user->save();
         return redirect()->route('admins.index');
     }
